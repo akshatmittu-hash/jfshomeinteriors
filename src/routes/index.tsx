@@ -11,10 +11,10 @@ import gallery4 from "@/assets/gallery-4.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Range Bedrooms — Fitted Wardrobes & Kitchens in Slough" },
-      { name: "description", content: "Bespoke fitted wardrobes, bedrooms, sliding doors and kitchens. Family-run craftsmen in Slough, 4.9★ on Google. Call 07412 569827." },
-      { property: "og:title", content: "The Range Bedrooms — Fitted Furniture in Slough" },
-      { property: "og:description", content: "Bespoke fitted wardrobes & kitchens, tailored to your home. 4.9★ Google rated." },
+      { title: "JFS Home Interiors — Bespoke Fitted Bedrooms & Kitchens" },
+      { name: "description", content: "JFS Home Interiors — bespoke fitted bedrooms, wardrobes, sliding doors and kitchens in Slough. Family-run craftsmen, 4.9★ on Google. Call 07412 569827." },
+      { property: "og:title", content: "JFS Home Interiors — Bespoke Fitted Furniture in Slough" },
+      { property: "og:description", content: "Hand-crafted fitted bedrooms & kitchens. 4.9★ Google rated." },
       { property: "og:image", content: heroWardrobe },
       { name: "twitter:image", content: heroWardrobe },
     ],
@@ -24,15 +24,15 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "07412 569827";
 const PHONE_HREF = "tel:+447412569827";
+const BRAND = "JFS Home Interiors";
 
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Nav />
       <Hero />
-      <Marquee />
+      <Intro />
       <Services />
-      <Gallery />
+      <Ranges />
       <Process />
       <Testimonials />
       <Contact />
@@ -41,170 +41,162 @@ function Home() {
   );
 }
 
-function Nav() {
-  return (
-    <nav className="sticky top-0 z-50 bg-background/85 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-serif text-xl md:text-2xl tracking-tight font-semibold">
-            The Range <span className="text-accent italic">Bedrooms</span>
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-1">
-            Slough · Est. Family Run
-          </span>
-        </a>
-        <div className="hidden md:flex items-center gap-10 text-xs font-medium uppercase tracking-[0.18em]">
-          <a href="#services" className="hover:text-accent transition-colors">Services</a>
-          <a href="#gallery" className="hover:text-accent transition-colors">Portfolio</a>
-          <a href="#process" className="hover:text-accent transition-colors">Process</a>
-          <a href="#reviews" className="hover:text-accent transition-colors">Reviews</a>
-        </div>
-        <a
-          href={PHONE_HREF}
-          className="bg-primary text-primary-foreground px-5 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-accent hover:text-accent-foreground transition-colors"
-        >
-          Book Survey
-        </a>
-      </div>
-    </nav>
-  );
-}
-
+/* ---------------- HERO (Symphony-inspired) ---------------- */
 function Hero() {
   return (
-    <section id="top" className="relative px-6 lg:px-12 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="flex text-accent text-lg tracking-tighter">★★★★★</div>
-            <span className="text-[10px] uppercase tracking-[0.25em] font-medium text-muted-foreground">
-              4.9 · 56 Google Reviews
-            </span>
-          </div>
-          <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] mb-8 tracking-tight">
-            Masterfully <br />
-            <span className="italic text-accent">Tailored</span> Furniture.
-          </h1>
-          <p className="text-lg text-muted-foreground mb-10 max-w-md leading-relaxed">
-            From bespoke floor-to-ceiling wardrobes to artisanal kitchens — we craft precision
-            fitted furniture for discerning homes across Slough and the Thames Valley.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#gallery"
-              className="border border-primary px-8 py-4 text-xs font-medium uppercase tracking-[0.2em] hover:bg-primary hover:text-primary-foreground transition-all text-center"
-            >
-              View our work
-            </a>
-            <a
-              href={PHONE_HREF}
-              className="flex items-center justify-center gap-3 px-8 py-4 text-xs font-medium uppercase tracking-[0.2em] group"
-            >
-              Call {PHONE}
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
+    <section id="top" className="relative h-screen min-h-[720px] w-full overflow-hidden bg-[color:var(--forest-deep)] text-cream">
+      {/* background image */}
+      <img
+        src={heroWardrobe}
+        alt="Bespoke fitted bedroom by JFS Home Interiors"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* colored overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, color-mix(in oklab, var(--forest-deep) 55%, transparent) 0%, color-mix(in oklab, var(--royal) 25%, transparent) 45%, color-mix(in oklab, var(--forest-deep) 70%, transparent) 100%)",
+        }}
+      />
 
-        <div className="md:col-span-7 relative">
-          <img
-            src={heroWardrobe}
-            alt="Bespoke fitted oak wardrobe with integrated lighting and brass handles"
-            width={1024}
-            height={1280}
-            className="w-full aspect-[4/5] object-cover shadow-2xl shadow-primary/10"
-          />
-          <div className="absolute -bottom-8 -left-4 md:-left-8 bg-card p-6 md:p-8 border border-border shadow-xl hidden lg:block max-w-[300px]">
-            <p className="text-sm italic font-serif leading-relaxed mb-4">
-              "Great price, quality and workmanship… highly recommend."
-            </p>
-            <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">
-              — Google Reviewer
-            </p>
-          </div>
+      {/* Top bar */}
+      <TopBar />
+
+      {/* Center logo */}
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center px-6 text-center">
+        <span className="text-[10px] tracking-[0.5em] uppercase text-gold mb-6">Est. Slough · Family Run</span>
+        <h1 className="font-serif text-6xl md:text-8xl leading-none text-cream">
+          JFS
+          <span className="block italic font-light text-gold text-4xl md:text-6xl mt-2">Home Interiors</span>
+        </h1>
+        <div className="mt-8 h-px w-24 bg-gold/70" />
+        <p className="mt-8 max-w-xl text-sm md:text-base text-cream/85 leading-relaxed">
+          Bespoke fitted bedrooms & kitchens, hand-crafted for the Thames Valley's most considered homes.
+        </p>
+
+        <div className="pointer-events-auto mt-10 flex flex-col sm:flex-row gap-4 items-center">
+          <a href="#ranges" className="bg-gold text-[color:var(--forest-deep)] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] hover:brightness-110 transition">
+            View our ranges
+          </a>
+          <a href={PHONE_HREF} className="border border-cream/40 text-cream px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] hover:bg-cream hover:text-[color:var(--forest-deep)] transition">
+            Book a home survey
+          </a>
         </div>
       </div>
+
+      {/* Floating info card, bottom right */}
+      <div className="hidden lg:block absolute bottom-24 right-10 max-w-xs bg-[color:var(--forest-deep)]/85 backdrop-blur border border-gold/30 p-7">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-gold tracking-tighter">★★★★★</span>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-cream/70">4.9 · 56 Google Reviews</span>
+        </div>
+        <p className="font-serif italic text-lg text-cream leading-snug mb-4">
+          "Great price, quality and workmanship. Highly recommend."
+        </p>
+        <a href="#reviews" className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-cream inline-flex items-center gap-2">
+          Read reviews <span>→</span>
+        </a>
+      </div>
+
+      {/* Scroll indicator */}
+      <a href="#intro" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.4em] text-cream/70 flex flex-col items-center gap-2">
+        Scroll
+        <span className="block h-8 w-px bg-cream/40" />
+      </a>
+
+      {/* Curved white bottom transition */}
+      <svg className="absolute bottom-0 left-0 w-full text-background" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0,80 C480,10 960,10 1440,80 L1440,80 L0,80 Z" />
+      </svg>
     </section>
   );
 }
 
-function Marquee() {
-  const items = ["Fitted Wardrobes", "Bespoke Kitchens", "Sliding Doors", "Walk-in Dressing Rooms", "Home Studies", "Free Home Survey"];
+function TopBar() {
   return (
-    <div className="border-y border-border bg-secondary/40 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-        {items.map((item, i) => (
-          <span key={item} className="flex items-center gap-10">
-            {item}
-            {i < items.length - 1 && <span className="text-accent">◆</span>}
-          </span>
-        ))}
+    <header className="absolute top-0 inset-x-0 z-20">
+      <div className="max-w-[1500px] mx-auto px-6 md:px-10 h-24 flex items-center justify-between text-cream">
+        <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.25em]">
+          <a href="#ranges" className="flex items-center gap-2 hover:text-gold transition"><MenuIcon /> Menu</a>
+          <a href="#services" className="hidden md:inline hover:text-gold transition">Our Kitchens</a>
+          <a href="#ranges" className="hidden md:inline hover:text-gold transition">Our Bedrooms</a>
+        </div>
+        <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
+          JFS<span className="text-gold">.</span>
+        </a>
+        <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.25em]">
+          <a href="#contact" className="hidden md:inline hover:text-gold transition">Find Us</a>
+          <a href={PHONE_HREF} className="hover:text-gold transition inline-flex items-center gap-2"><PhoneIcon />Call</a>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
 
+function MenuIcon() {
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 6h18M3 12h18M3 18h18" /></svg>;
+}
+function PhoneIcon() {
+  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg>;
+}
+
+/* ---------------- INTRO ---------------- */
+function Intro() {
+  return (
+    <section id="intro" className="px-6 md:px-12 pt-24 pb-20 text-center max-w-4xl mx-auto">
+      <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">Welcome to {BRAND}</span>
+      <h2 className="font-serif text-4xl md:text-6xl leading-tight mt-6">
+        Interiors of <em className="text-[color:var(--forest)]">quiet distinction</em>,<br />
+        made for the way you live.
+      </h2>
+      <p className="mt-8 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+        From floor-to-ceiling fitted wardrobes and dressing rooms to hand-finished designer kitchens,
+        every JFS installation is measured, designed and fitted by our own family team in Slough.
+      </p>
+    </section>
+  );
+}
+
+/* ---------------- SERVICES ---------------- */
 const services = [
-  {
-    n: "01",
-    title: "Fitted Wardrobes",
-    tag: "Storage",
-    img: serviceWardrobes,
-    desc: "Wall-to-wall, floor-to-ceiling wardrobes tailored to the exact dimensions of your bedroom — with bespoke internal racking and integrated lighting.",
-  },
-  {
-    n: "02",
-    title: "Designer Kitchens",
-    tag: "Living",
-    img: serviceKitchen,
-    desc: "Hand-finished cabinetry, premium surfaces and considered hardware. From shaker classics to handleless contemporary.",
-  },
-  {
-    n: "03",
-    title: "Home Studies",
-    tag: "Workspace",
-    img: serviceStudy,
-    desc: "Built-in desks, bookcases and shelving designed around how you actually work — quiet, organised and unmistakably yours.",
-  },
+  { n: "01", tag: "Bedrooms", title: "Fitted Wardrobes", img: serviceWardrobes,
+    desc: "Wall-to-wall wardrobes tailored to the exact geometry of your room, with bespoke internals and integrated lighting." },
+  { n: "02", tag: "Kitchens", title: "Designer Kitchens", img: serviceKitchen,
+    desc: "Hand-finished cabinetry, considered hardware and premium surfaces — shaker to handleless contemporary." },
+  { n: "03", tag: "Living", title: "Studies & Storage", img: serviceStudy,
+    desc: "Built-in desks, bookcases and bespoke storage designed around the way you work and live." },
 ];
 
 function Services() {
   return (
-    <section id="services" className="bg-primary text-primary-foreground py-24 px-6 lg:px-12">
+    <section id="services" className="bg-[color:var(--forest)] text-cream px-6 md:px-12 py-24">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-          <div className="max-w-xl">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-accent mb-4 block">Our Specialisms</span>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              Where form meets <br />
-              <span className="italic">functionality.</span>
-            </h2>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold">Our Craft</span>
+            <h2 className="font-serif text-4xl md:text-5xl mt-4">Three disciplines, <em>one workshop.</em></h2>
           </div>
-          <p className="max-w-sm text-sm text-primary-foreground/60 leading-relaxed">
-            Every project is handled in-house by our own craftsmen — from initial home survey
-            and 3D design through to the final hand-finished installation.
+          <p className="max-w-sm text-sm text-cream/70 leading-relaxed">
+            Every project is handled in-house — from initial home survey and 3D design through to hand-finished installation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-primary-foreground/10 border border-primary-foreground/10">
+        <div className="grid md:grid-cols-3 gap-8">
           {services.map((s) => (
-            <article key={s.n} className="group relative bg-primary p-8 md:p-10 flex flex-col">
-              <div className="overflow-hidden mb-8">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  className="w-full aspect-[5/4] object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+            <article key={s.n} className="group flex flex-col">
+              <div className="relative overflow-hidden mb-6">
+                <img src={s.img} alt={s.title} loading="lazy" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute top-4 left-4 bg-[color:var(--forest-deep)]/80 backdrop-blur px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold border border-gold/30">
+                  {s.tag}
+                </div>
               </div>
-              <div className="flex items-baseline gap-4 mb-3">
-                <span className="font-serif italic text-accent text-xl">{s.n}</span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/40">{s.tag}</span>
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="font-serif italic text-gold text-xl">{s.n}</span>
+                <div className="h-px flex-1 bg-cream/20" />
               </div>
               <h3 className="font-serif text-2xl mb-3">{s.title}</h3>
-              <p className="text-sm text-primary-foreground/65 leading-relaxed">{s.desc}</p>
+              <p className="text-sm text-cream/70 leading-relaxed">{s.desc}</p>
             </article>
           ))}
         </div>
@@ -213,66 +205,69 @@ function Services() {
   );
 }
 
-function Gallery() {
+/* ---------------- RANGES / GALLERY ---------------- */
+const ranges = [
+  { name: "Urbano", tag: "Modern Contemporary", img: gallery1 },
+  { name: "Regency", tag: "Traditional Shaker", img: gallery2 },
+  { name: "Aurelia", tag: "Handleless Luxe", img: gallery3 },
+  { name: "Heritage", tag: "Classic Painted", img: gallery4 },
+];
+
+function Ranges() {
   return (
-    <section id="gallery" className="px-6 lg:px-12 py-24">
+    <section id="ranges" className="px-6 md:px-12 py-24">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-accent mb-4 block">Selected Work</span>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">Recent installations.</h2>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">Our Ranges</span>
+            <h2 className="font-serif text-4xl md:text-5xl mt-4">A curated portfolio.</h2>
           </div>
-          <a href={PHONE_HREF} className="text-xs uppercase tracking-[0.2em] underline underline-offset-8 decoration-accent hover:text-accent transition-colors">
-            Request the full portfolio
+          <a href={PHONE_HREF} className="text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold hover:text-[color:var(--forest)] transition">
+            Request full portfolio
           </a>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-4 md:gap-6">
-          <div className="md:col-span-5 md:row-span-2">
-            <img src={gallery1} alt="Sliding mirror wardrobe doors in master bedroom" loading="lazy" width={900} height={1200}
-              className="w-full h-full object-cover aspect-[3/4]" />
-          </div>
-          <div className="md:col-span-7">
-            <img src={gallery2} alt="Walk-in dressing room with island and oak shelving" loading="lazy" width={1200} height={900}
-              className="w-full object-cover aspect-[4/3]" />
-          </div>
-          <div className="md:col-span-4">
-            <img src={gallery3} alt="Modern white handleless kitchen with island" loading="lazy" width={1200} height={900}
-              className="w-full object-cover aspect-[4/3]" />
-          </div>
-          <div className="md:col-span-3">
-            <img src={gallery4} alt="Detail of wooden handle on a fitted wardrobe drawer" loading="lazy" width={900} height={1200}
-              className="w-full object-cover aspect-[3/4]" />
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {ranges.map((r) => (
+            <a href="#contact" key={r.name} className="group block relative overflow-hidden">
+              <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--forest-deep)]/90 via-transparent to-transparent" />
+              <div className="absolute bottom-0 inset-x-0 p-6 text-cream">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-gold">{r.tag}</span>
+                <h3 className="font-serif text-3xl italic mt-1">{r.name}</h3>
+                <div className="mt-3 h-px w-8 bg-gold group-hover:w-16 transition-all" />
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
+/* ---------------- PROCESS ---------------- */
 const steps = [
-  { n: "01", title: "Home Survey", body: "We visit your home, take precise measurements and listen to how you want to live in the space." },
+  { n: "01", title: "Home Survey", body: "We visit, measure precisely and listen to how you want to live in the space." },
   { n: "02", title: "3D Design", body: "Our designer presents detailed visuals and a transparent, no-obligation quote." },
-  { n: "03", title: "Hand Build", body: "We craft your furniture in our workshop using premium materials and quality hardware." },
-  { n: "04", title: "Installation", body: "Our fitters install with precision and leave your home clean — usually in just a few days." },
+  { n: "03", title: "Hand Build", body: "We craft your furniture using premium materials and quality hardware." },
+  { n: "04", title: "Installation", body: "Our fitters install with precision — and leave your home immaculate." },
 ];
 
 function Process() {
   return (
-    <section id="process" className="bg-secondary/50 px-6 lg:px-12 py-24 border-y border-border">
-      <div className="max-w-7xl mx-auto">
+    <section id="process" className="relative px-6 md:px-12 py-24 bg-[color:var(--royal)] text-cream overflow-hidden">
+      <div className="max-w-7xl mx-auto relative">
         <div className="max-w-2xl mb-16">
-          <span className="text-[10px] uppercase tracking-[0.25em] text-accent mb-4 block">Our Process</span>
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            From first sketch to <span className="italic">soft-close</span>.
-          </h2>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold">Our Process</span>
+          <h2 className="font-serif text-4xl md:text-5xl mt-4">From first sketch to <em>soft-close.</em></h2>
         </div>
-        <div className="grid md:grid-cols-4 gap-px bg-border">
+        <div className="grid md:grid-cols-4 gap-10">
           {steps.map((s) => (
-            <div key={s.n} className="bg-background p-8">
-              <div className="font-serif italic text-accent text-2xl mb-6">{s.n}</div>
+            <div key={s.n}>
+              <div className="font-serif italic text-gold text-3xl mb-4">{s.n}</div>
+              <div className="h-px w-full bg-cream/25 mb-5" />
               <h3 className="font-serif text-xl mb-3">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+              <p className="text-sm text-cream/75 leading-relaxed">{s.body}</p>
             </div>
           ))}
         </div>
@@ -281,145 +276,104 @@ function Process() {
   );
 }
 
+/* ---------------- TESTIMONIALS ---------------- */
 const reviews = [
-  { quote: "Great price, quality and workmanship….highly recommend.", name: "Google Review" },
-  { quote: "I recommend this company they give 5 star service.", name: "Google Review" },
-  { quote: "Plenty of options to choose from, awesomely done kitchen.", name: "Google Review" },
+  { quote: "Great price, quality and workmanship. Highly recommend.", name: "Google Review" },
+  { quote: "I recommend this company — they give 5-star service.", name: "Google Review" },
+  { quote: "Plenty of options to choose from. Awesomely done kitchen.", name: "Google Review" },
 ];
 
 function Testimonials() {
   return (
-    <section id="reviews" className="px-6 lg:px-12 py-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex text-accent text-xl tracking-tighter">★★★★★</div>
-            </div>
-            <h2 className="font-serif text-4xl leading-tight mb-4">
-              Trusted by <span className="italic">neighbours</span> in Slough.
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              Rated 4.9 out of 5 across 56 verified Google reviews.
-            </p>
+    <section id="reviews" className="px-6 md:px-12 py-24">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
+        <div className="md:col-span-4">
+          <div className="text-gold text-xl tracking-tighter mb-4">★★★★★</div>
+          <h2 className="font-serif text-4xl leading-tight">Trusted across <em>Slough</em> & the Thames Valley.</h2>
+          <p className="mt-6 text-sm text-muted-foreground">Rated 4.9 out of 5 across 56 verified Google reviews.</p>
+          <div className="mt-8 inline-flex items-baseline gap-3">
+            <span className="font-serif text-6xl text-[color:var(--forest)]">4.9</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Average Google rating</span>
           </div>
-          <div className="md:col-span-8 grid sm:grid-cols-2 gap-px bg-border">
-            {reviews.map((r, i) => (
-              <blockquote key={i} className="bg-background p-8 flex flex-col justify-between">
-                <p className="font-serif text-xl italic leading-snug mb-6">"{r.quote}"</p>
-                <cite className="text-[10px] uppercase tracking-[0.25em] not-italic text-muted-foreground">
-                  — {r.name}
-                </cite>
-              </blockquote>
-            ))}
-            <div className="bg-accent/10 p-8 flex flex-col justify-center items-start">
-              <span className="font-serif text-5xl text-accent leading-none">4.9</span>
-              <span className="text-[10px] uppercase tracking-[0.25em] mt-3 text-muted-foreground">Average rating</span>
-            </div>
-          </div>
+        </div>
+        <div className="md:col-span-8 grid sm:grid-cols-2 gap-6">
+          {reviews.map((r, i) => (
+            <blockquote key={i} className="bg-secondary p-8 border-l-2 border-gold flex flex-col justify-between">
+              <p className="font-serif text-xl italic leading-snug mb-6">"{r.quote}"</p>
+              <cite className="text-[10px] uppercase tracking-[0.3em] not-italic text-muted-foreground">— {r.name}</cite>
+            </blockquote>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
+/* ---------------- CONTACT ---------------- */
 function Contact() {
   return (
-    <section id="contact" className="bg-primary text-primary-foreground px-6 lg:px-12 py-24">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+    <section id="contact" className="bg-[color:var(--forest-deep)] text-cream px-6 md:px-12 py-24">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
         <div>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-accent mb-4 block">Get in touch</span>
-          <h2 className="font-serif text-5xl md:text-6xl leading-tight mb-8">
-            Start your <br /><span className="italic">project.</span>
-          </h2>
-          <p className="text-primary-foreground/70 max-w-md mb-12 leading-relaxed">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold">Get in touch</span>
+          <h2 className="font-serif text-5xl md:text-6xl mt-4 mb-8">Start your <em>project.</em></h2>
+          <p className="text-cream/70 max-w-md leading-relaxed mb-12">
             We offer free no-obligation home surveys across Slough and the surrounding areas.
-            Call us, drop in, or book a visit and we'll bring the swatches.
+            Call, message or book a visit — we'll bring the swatches.
           </p>
-
-          <div className="space-y-8">
-            <ContactRow label="Visit" value="26 Berryfield, Slough SL2 5SD" />
-            <ContactRow label="Call" value={PHONE} href={PHONE_HREF} />
-            <ContactRow label="Hours" value="Mon–Sat · 09:00 – 18:00" />
-            <div className="flex items-start gap-6">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-accent pt-1.5 w-16 shrink-0">Social</span>
-              <div className="flex gap-6">
-                <a href="#" className="text-lg hover:text-accent transition-colors">Instagram</a>
-                <a href="#" className="text-lg hover:text-accent transition-colors">Facebook</a>
-              </div>
-            </div>
+          <div className="space-y-6">
+            <Row label="Visit" value="26 Berryfield, Slough SL2 5SD" />
+            <Row label="Call" value={PHONE} href={PHONE_HREF} />
+            <Row label="Hours" value="Mon–Sat · 09:00 – 18:00" />
+            <Row label="Social" value="Instagram · Facebook" />
           </div>
         </div>
 
-        <div className="bg-primary-foreground/5 p-8 md:p-10 border border-primary-foreground/10">
-          <h3 className="font-serif text-2xl mb-8">Request a callback</h3>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <Field label="Name" type="text" name="name" />
-            <Field label="Phone" type="tel" name="phone" />
-            <Field label="Project type" type="text" name="project" placeholder="Fitted wardrobe, kitchen…" />
-            <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">Tell us more</label>
-              <textarea
-                rows={4}
-                className="w-full bg-transparent border-b border-primary-foreground/20 focus:border-accent outline-none py-3 text-sm resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-accent text-accent-foreground py-4 text-xs font-medium uppercase tracking-[0.25em] hover:brightness-110 transition-all"
-            >
-              Send request
-            </button>
-            <p className="text-[10px] text-primary-foreground/50">
-              Or call us directly on <a href={PHONE_HREF} className="text-accent">{PHONE}</a>.
-            </p>
-          </form>
-        </div>
+        <form onSubmit={(e) => e.preventDefault()} className="bg-cream/5 border border-gold/20 p-8 md:p-10 space-y-6">
+          <h3 className="font-serif text-2xl mb-2">Request a callback</h3>
+          <Field label="Name" name="name" type="text" />
+          <Field label="Phone" name="phone" type="tel" />
+          <Field label="Project" name="project" type="text" placeholder="Fitted wardrobe, kitchen…" />
+          <div className="space-y-2">
+            <label className="text-[10px] uppercase tracking-[0.3em] text-cream/60">Message</label>
+            <textarea rows={4} className="w-full bg-transparent border-b border-cream/25 focus:border-gold outline-none py-3 text-sm resize-none" />
+          </div>
+          <button className="w-full bg-gold text-[color:var(--forest-deep)] py-4 text-[11px] font-medium uppercase tracking-[0.3em] hover:brightness-110 transition">
+            Send request
+          </button>
+        </form>
       </div>
     </section>
   );
 }
 
-function ContactRow({ label, value, href }: { label: string; value: string; href?: string }) {
-  const content = href ? (
-    <a href={href} className="text-lg hover:text-accent transition-colors">{value}</a>
-  ) : (
-    <span className="text-lg">{value}</span>
-  );
+function Row({ label, value, href }: { label: string; value: string; href?: string }) {
+  const inner = href ? <a href={href} className="text-lg hover:text-gold transition">{value}</a> : <span className="text-lg">{value}</span>;
   return (
     <div className="flex items-start gap-6">
-      <span className="text-[10px] uppercase tracking-[0.25em] text-accent pt-1.5 w-16 shrink-0">{label}</span>
-      {content}
+      <span className="text-[10px] uppercase tracking-[0.3em] text-gold pt-1.5 w-16 shrink-0">{label}</span>
+      {inner}
     </div>
   );
 }
 
-function Field({ label, type, name, placeholder }: { label: string; type: string; name: string; placeholder?: string }) {
+function Field({ label, name, type, placeholder }: { label: string; name: string; type: string; placeholder?: string }) {
   return (
     <div className="space-y-2">
-      <label htmlFor={name} className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">{label}</label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        className="w-full bg-transparent border-b border-primary-foreground/20 focus:border-accent outline-none py-3 text-sm placeholder:text-primary-foreground/30"
-      />
+      <label htmlFor={name} className="text-[10px] uppercase tracking-[0.3em] text-cream/60">{label}</label>
+      <input id={name} name={name} type={type} placeholder={placeholder}
+        className="w-full bg-transparent border-b border-cream/25 focus:border-gold outline-none py-3 text-sm placeholder:text-cream/30" />
     </div>
   );
 }
 
 function Footer() {
   return (
-    <footer className="px-6 lg:px-12 py-12 border-t border-border bg-background">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-        <span className="font-serif text-base normal-case tracking-tight text-foreground">
-          The Range <span className="italic text-accent">Bedrooms</span>
-        </span>
+    <footer className="bg-[color:var(--forest-deep)] text-cream/70 border-t border-cream/10 px-6 md:px-12 py-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em]">
+        <span className="font-serif text-lg normal-case tracking-tight text-cream">JFS <em className="text-gold">Home Interiors</em></span>
         <span>© {new Date().getFullYear()} · Slough, Berkshire · Family Owned</span>
-        <span>
-          <a href={PHONE_HREF} className="hover:text-accent transition-colors">{PHONE}</a>
-        </span>
+        <a href={PHONE_HREF} className="hover:text-gold transition">{PHONE}</a>
       </div>
     </footer>
   );
