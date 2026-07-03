@@ -28,45 +28,54 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ink: var(--ink);
+  --color-forest: var(--forest);
+  --color-royal: var(--royal);
+  --color-gold: var(--gold);
   --color-cream: var(--cream);
-  --color-brand-muted: var(--brand-muted);
-  --font-serif: 'Playfair Display', serif;
+  --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Inter', sans-serif;
 }
 
 :root {
-  --radius: 0.5rem;
-  /* Architectural luxe palette */
-  --cream: oklch(0.975 0.008 80);          /* #f9f7f4 soft cream */
-  --ink: oklch(0.22 0.005 60);             /* near-black warm */
-  --brand-muted: oklch(0.84 0.025 70);     /* warm taupe */
-  --accent: oklch(0.74 0.10 75);           /* warm brass/gold #c5a368 */
-  --accent-foreground: oklch(0.20 0.01 60);
+  --radius: 0.25rem;
+
+  /* JFS palette — forest green + royal purple + gilded gold */
+  --forest: oklch(0.32 0.06 155);          /* deep forest green */
+  --forest-deep: oklch(0.22 0.05 155);
+  --royal: oklch(0.32 0.14 295);           /* royal purple */
+  --gold: oklch(0.78 0.11 85);             /* gilded gold */
+  --cream: oklch(0.975 0.008 85);
 
   --background: var(--cream);
-  --foreground: var(--ink);
+  --foreground: oklch(0.18 0.02 155);
+
   --card: oklch(1 0 0);
-  --card-foreground: var(--ink);
+  --card-foreground: var(--foreground);
   --popover: oklch(1 0 0);
-  --popover-foreground: var(--ink);
-  --primary: var(--ink);
+  --popover-foreground: var(--foreground);
+
+  --primary: var(--forest);
   --primary-foreground: var(--cream);
-  --secondary: oklch(0.94 0.01 70);
-  --secondary-foreground: var(--ink);
-  --muted: oklch(0.94 0.01 70);
-  --muted-foreground: oklch(0.45 0.01 60);
+
+  --secondary: oklch(0.94 0.01 155);
+  --secondary-foreground: var(--forest-deep);
+
+  --muted: oklch(0.94 0.01 150);
+  --muted-foreground: oklch(0.45 0.02 155);
+
+  --accent: var(--gold);
+  --accent-foreground: var(--forest-deep);
+
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.22 0.005 60 / 0.08);
-  --input: oklch(0.22 0.005 60 / 0.12);
-  --ring: var(--accent);
+
+  --border: oklch(0.32 0.06 155 / 0.14);
+  --input: oklch(0.32 0.06 155 / 0.18);
+  --ring: var(--gold);
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
+  * { border-color: var(--color-border); }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
