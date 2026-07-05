@@ -12,8 +12,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "JFS Home Interiors — Bespoke Fitted Bedrooms & Kitchens" },
-      { name: "description", content: "JFS Home Interiors — bespoke fitted bedrooms, wardrobes, sliding doors and kitchens in Slough. Family-run craftsmen, 4.9★ on Google. Call 07412 569827." },
-      { property: "og:title", content: "JFS Home Interiors — Bespoke Fitted Furniture in Slough" },
+      { name: "description", content: "JFS Home Interiors — bespoke fitted bedrooms, wardrobes, sliding doors and kitchens across the UK. 4.9★ on Google. Call 07412 569827." },
+      { property: "og:title", content: "JFS Home Interiors — Bespoke Fitted Furniture across the UK" },
       { property: "og:description", content: "Hand-crafted fitted bedrooms & kitchens. 4.9★ Google rated." },
       { property: "og:image", content: heroWardrobe },
       { name: "twitter:image", content: heroWardrobe },
@@ -65,14 +65,14 @@ function Hero() {
 
       {/* Center logo */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center px-6 text-center">
-        <span className="text-[10px] tracking-[0.5em] uppercase text-gold mb-6">Est. Slough · Family Run</span>
+        <span className="text-[10px] tracking-[0.5em] uppercase text-gold mb-6">UK · Bespoke Interiors</span>
         <h1 className="font-serif text-6xl md:text-8xl leading-none text-cream">
           JFS
           <span className="block italic font-light text-gold text-4xl md:text-6xl mt-2">Home Interiors</span>
         </h1>
         <div className="mt-8 h-px w-24 bg-gold/70" />
         <p className="mt-8 max-w-xl text-sm md:text-base text-cream/85 leading-relaxed">
-          Bespoke fitted bedrooms & kitchens, hand-crafted for the Thames Valley's most considered homes.
+          Bespoke fitted bedrooms & kitchens, hand-crafted for the UK's most considered homes.
         </p>
 
         <div className="pointer-events-auto mt-10 flex flex-col sm:flex-row gap-4 items-center">
@@ -150,9 +150,12 @@ function Intro() {
         Interiors of <em className="text-[color:var(--forest)]">quiet distinction</em>,<br />
         made for the way you live.
       </h2>
-      <p className="mt-8 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-        From floor-to-ceiling fitted wardrobes and dressing rooms to hand-finished designer kitchens,
-        every JFS installation is measured, designed and fitted by our own family team in Slough.
+      <p className="mt-8 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+        At JFS, exceptional interiors begin with precision, craftsmanship and a commitment to truly bespoke design. From floor‑to‑ceiling fitted wardrobes and elegantly tailored dressing rooms to hand‑finished designer kitchens, every installation is meticulously measured, thoughtfully designed and expertly fitted by our dedicated in‑house specialists operating across the UK.
+        <br /><br />
+        With decades of experience and an unwavering attention to detail, we create made‑to‑measure solutions that enhance the way you live. Our process blends innovative design, premium materials and seamless project delivery, ensuring each space feels refined, functional and uniquely yours.
+        <br /><br />
+        Whether you’re transforming a single room or envisioning a complete interior redesign, JFS brings together expertise, creativity and a client‑focused approach to deliver interiors that elevate your home.
       </p>
     </section>
   );
@@ -289,7 +292,7 @@ function Testimonials() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <div className="text-gold text-xl tracking-tighter mb-4">★★★★★</div>
-          <h2 className="font-serif text-4xl leading-tight">Trusted across <em>Slough</em> & the Thames Valley.</h2>
+          <h2 className="font-serif text-4xl leading-tight">Trusted across the <em>UK</em>.</h2>
           <p className="mt-6 text-sm text-muted-foreground">Rated 4.9 out of 5 across 56 verified Google reviews.</p>
           <div className="mt-8 inline-flex items-baseline gap-3">
             <span className="font-serif text-6xl text-[color:var(--forest)]">4.9</span>
@@ -318,7 +321,7 @@ function Contact() {
           <span className="text-[10px] uppercase tracking-[0.4em] text-gold">Get in touch</span>
           <h2 className="font-serif text-5xl md:text-6xl mt-4 mb-8">Start your <em>project.</em></h2>
           <p className="text-cream/70 max-w-md leading-relaxed mb-12">
-            We offer free no-obligation home surveys across Slough and the surrounding areas.
+            We offer free no-obligation home surveys across the UK.
             Call, message or book a visit — we'll bring the swatches.
           </p>
           <div className="space-y-6">
@@ -372,7 +375,7 @@ function Footer() {
     <footer className="bg-[color:var(--forest-deep)] text-cream/70 border-t border-cream/10 px-6 md:px-12 py-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em]">
         <span className="font-serif text-lg normal-case tracking-tight text-cream">JFS <em className="text-gold">Home Interiors</em></span>
-        <span>© {new Date().getFullYear()} · Slough, Berkshire · Family Owned</span>
+        <span>© {new Date().getFullYear()} · UK</span>
         <a href={PHONE_HREF} className="hover:text-gold transition">{PHONE}</a>
       </div>
     </footer>
