@@ -153,7 +153,7 @@ function Intro() {
       <p className="mt-8 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
         At JFS, exceptional interiors begin with precision, craftsmanship and a commitment to truly bespoke design. From floor‑to‑ceiling fitted wardrobes and elegantly tailored dressing rooms to hand‑finished designer kitchens, every installation is meticulously measured, thoughtfully designed and expertly fitted by our dedicated in‑house specialists operating across the UK.
         <br /><br />
-        With decades of experience and an unwavering attention to detail, we create made‑to‑measure solutions that enhance the way you live. Our process blends innovative design, premium materials and seamless project delivery, ensuring each space feels refined, functional and uniquely yours.
+        With a decade of experience and an unwavering attention to detail, we create made‑to‑measure solutions that enhance the way you live. Our process blends innovative design, premium materials and seamless project delivery, ensuring each space feels refined, functional and uniquely yours.
         <br /><br />
         Whether you’re transforming a single room or envisioning a complete interior redesign, JFS brings together expertise, creativity and a client‑focused approach to deliver interiors that elevate your home.
       </p>
