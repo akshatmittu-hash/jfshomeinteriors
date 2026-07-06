@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RangesRangeIdRouteImport } from './routes/ranges.$rangeId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RangesRangeIdRoute = RangesRangeIdRouteImport.update({
+  id: '/ranges/$rangeId',
+  path: '/ranges/$rangeId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ranges/$rangeId': typeof RangesRangeIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ranges/$rangeId': typeof RangesRangeIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ranges/$rangeId': typeof RangesRangeIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/ranges/$rangeId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ranges/$rangeId'
+  id: '__root__' | '/' | '/ranges/$rangeId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RangesRangeIdRoute: typeof RangesRangeIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ranges/$rangeId': {
+      id: '/ranges/$rangeId'
+      path: '/ranges/$rangeId'
+      fullPath: '/ranges/$rangeId'
+      preLoaderRoute: typeof RangesRangeIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RangesRangeIdRoute: RangesRangeIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

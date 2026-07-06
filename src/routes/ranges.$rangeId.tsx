@@ -175,7 +175,7 @@ function RangeDetail() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {range.images.map((img, i) => (
+            {range.images.map((img: { src: string; label: string }, i: number) => (
               <figure key={i} className="group overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img
