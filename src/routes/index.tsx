@@ -210,10 +210,10 @@ function Services() {
 
 /* ---------------- RANGES / GALLERY ---------------- */
 const ranges = [
-  { name: "Urbano", tag: "Modern Contemporary", img: gallery1 },
-  { name: "Regency", tag: "Traditional Shaker", img: gallery2 },
-  { name: "Aurelia", tag: "Handleless Luxe", img: gallery3 },
-  { name: "Heritage", tag: "Classic Painted", img: gallery4 },
+  { slug: "urbano", name: "Urbano", tag: "Modern Contemporary", img: gallery1 },
+  { slug: "regency", name: "Regency", tag: "Traditional Shaker", img: gallery2 },
+  { slug: "aurelia", name: "Aurelia", tag: "Handleless Luxe", img: gallery3 },
+  { slug: "heritage", name: "Heritage", tag: "Classic Painted", img: gallery4 },
 ];
 
 function Ranges() {
@@ -232,7 +232,7 @@ function Ranges() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {ranges.map((r) => (
-            <a href="#contact" key={r.name} className="group block relative overflow-hidden">
+            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} className="group block relative overflow-hidden">
               <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--forest-deep)]/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 text-cream">
@@ -240,7 +240,7 @@ function Ranges() {
                 <h3 className="font-serif text-3xl italic mt-1">{r.name}</h3>
                 <div className="mt-3 h-px w-8 bg-gold group-hover:w-16 transition-all" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
