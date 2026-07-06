@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroWardrobe from "@/assets/hero-wardrobe.jpg";
 import serviceWardrobes from "@/assets/service-wardrobes.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
@@ -117,17 +117,17 @@ function TopBar() {
   return (
     <header className="absolute top-0 inset-x-0 z-20">
       <div className="max-w-[1500px] mx-auto px-6 md:px-10 h-24 flex items-center justify-between text-cream">
-        <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.25em]">
-          <a href="#ranges" className="flex items-center gap-2 hover:text-gold transition"><MenuIcon /> Menu</a>
-          <a href="#services" className="hidden md:inline hover:text-gold transition">Our Kitchens</a>
-          <a href="#ranges" className="hidden md:inline hover:text-gold transition">Our Bedrooms</a>
+        <div className="flex items-center gap-6 md:gap-8 text-[11px] uppercase tracking-[0.25em]">
+          <a href="#services" className="hover:text-gold transition">Kitchens</a>
+          <a href="#ranges" className="hidden md:inline hover:text-gold transition">Bedrooms</a>
         </div>
         <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
           JFS<span className="text-gold">.</span>
         </a>
-        <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.25em]">
-          <a href="#contact" className="hidden md:inline hover:text-gold transition">Find Us</a>
-          <a href={PHONE_HREF} className="hover:text-gold transition inline-flex items-center gap-2"><PhoneIcon />Call</a>
+        <div className="flex items-center gap-6 md:gap-8 text-[11px] uppercase tracking-[0.25em]">
+          <a href="#reviews" className="hidden md:inline hover:text-gold transition">Reviews</a>
+          <a href="#contact" className="hover:text-gold transition">Book a Visit</a>
+          <a href={PHONE_HREF} className="hidden md:inline-flex hover:text-gold transition items-center gap-2"><PhoneIcon />Call</a>
         </div>
       </div>
     </header>
@@ -153,7 +153,7 @@ function Intro() {
       <p className="mt-8 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
         At JFS, exceptional interiors begin with precision, craftsmanship and a commitment to truly bespoke design. From floor‑to‑ceiling fitted wardrobes and elegantly tailored dressing rooms to hand‑finished designer kitchens, every installation is meticulously measured, thoughtfully designed and expertly fitted by our dedicated in‑house specialists operating across the UK.
         <br /><br />
-        With decades of experience and an unwavering attention to detail, we create made‑to‑measure solutions that enhance the way you live. Our process blends innovative design, premium materials and seamless project delivery, ensuring each space feels refined, functional and uniquely yours.
+        With a decade of experience and an unwavering attention to detail, we create made‑to‑measure solutions that enhance the way you live. Our process blends innovative design, premium materials and seamless project delivery, ensuring each space feels refined, functional and uniquely yours.
         <br /><br />
         Whether you’re transforming a single room or envisioning a complete interior redesign, JFS brings together expertise, creativity and a client‑focused approach to deliver interiors that elevate your home.
       </p>
@@ -210,10 +210,10 @@ function Services() {
 
 /* ---------------- RANGES / GALLERY ---------------- */
 const ranges = [
-  { name: "Urbano", tag: "Modern Contemporary", img: gallery1 },
-  { name: "Regency", tag: "Traditional Shaker", img: gallery2 },
-  { name: "Aurelia", tag: "Handleless Luxe", img: gallery3 },
-  { name: "Heritage", tag: "Classic Painted", img: gallery4 },
+  { slug: "urbano", name: "Urbano", tag: "Modern Contemporary", img: gallery1 },
+  { slug: "regency", name: "Regency", tag: "Traditional Shaker", img: gallery2 },
+  { slug: "aurelia", name: "Aurelia", tag: "Handleless Luxe", img: gallery3 },
+  { slug: "heritage", name: "Heritage", tag: "Classic Painted", img: gallery4 },
 ];
 
 function Ranges() {
@@ -232,7 +232,7 @@ function Ranges() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {ranges.map((r) => (
-            <a href="#contact" key={r.name} className="group block relative overflow-hidden">
+            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} className="group block relative overflow-hidden">
               <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--forest-deep)]/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 text-cream">
@@ -240,7 +240,7 @@ function Ranges() {
                 <h3 className="font-serif text-3xl italic mt-1">{r.name}</h3>
                 <div className="mt-3 h-px w-8 bg-gold group-hover:w-16 transition-all" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
