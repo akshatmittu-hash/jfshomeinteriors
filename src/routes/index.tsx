@@ -324,10 +324,20 @@ function Contact() {
             Call, message or book a visit — we'll bring the swatches.
           </p>
           <div className="space-y-6">
-            <Row label="Visit" value="26 Berryfield, Slough SL2 5SD" />
+            <Row label="Visit" value="67 Cove Road Farnborough GU14 0EX" />
             <Row label="Call" value={PHONE} href={PHONE_HREF} />
             <Row label="Hours" value="Mon–Sat · 09:00 – 18:00" />
-            <Row label="Social" value="Instagram · Facebook" />
+            <div className="flex items-start gap-6">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-gold pt-1.5 w-16 shrink-0">Social</span>
+              <a
+                href="https://www.instagram.com/therangebedrooms?igsh=MXFqeWExa3M4czh2Yw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg hover:text-gold transition"
+              >
+                Instagram
+              </a>
+            </div>
           </div>
         </div>
 
