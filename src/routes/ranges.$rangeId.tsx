@@ -19,199 +19,244 @@ import heritage2 from "@/assets/heritage-2.jpg";
 import heritage3 from "@/assets/heritage-3.jpg";
 import heritage4 from "@/assets/heritage-4.jpg";
 import heritage5 from "@/assets/heritage-5.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import serviceStudy from "@/assets/service-study.jpg";
+import serviceWardrobes from "@/assets/service-wardrobes.jpg";
+import serviceKitchen from "@/assets/service-kitchen.jpg";
 
-type Range = {
+type SubRange = {
   name: string;
-  tag: string;
-  category: "Bedrooms" | "Kitchens";
+  style: string;
   description: string;
-  images: { src: string; label: string }[];
+  images: string[];
 };
 
-const RANGES: Record<string, Range> = {
-  urbano: {
-    name: "Urbano",
-    tag: "Modern Contemporary",
-    category: "Bedrooms",
-    description:
-      "Sleek, architectural wardrobes for the contemporary home. The Urbano range pairs handleless push-to-open cabinetry with premium veneers, smoked glass and integrated LED lighting.",
-    images: [
-      { src: urbano1, label: "Matte Charcoal · Brushed Brass" },
-      { src: urbano2, label: "Navy High Gloss" },
-      { src: urbano3, label: "Warm Oak · Black Trim" },
-      { src: urbano4, label: "Soft Matte White" },
-      { src: urbano5, label: "Graphite Black · Smoked Glass" },
+type Category = {
+  name: string;
+  tag: string;
+  intro: string;
+  hero: string;
+  subRanges: SubRange[];
+};
+
+const CATEGORIES: Record<string, Category> = {
+  kitchens: {
+    name: "Kitchens",
+    tag: "Designer Kitchens",
+    hero: serviceKitchen,
+    intro:
+      "From handleless contemporary to classic in-frame shaker, our kitchens are hand-finished in the workshop and installed with precision. Explore our signature ranges.",
+    subRanges: [
+      {
+        name: "Ashbourne",
+        style: "In-frame Shaker",
+        description: "A quintessential English painted kitchen with in-frame cabinetry, deep drawers and heritage colourways.",
+        images: [aurelia1, aurelia2, aurelia3],
+      },
+      {
+        name: "Austin",
+        style: "Handleless Contemporary",
+        description: "Minimalist push-to-open cabinetry paired with matte lacquers and integrated brass detailing.",
+        images: [aurelia4, aurelia5],
+      },
+      {
+        name: "Cranbrook",
+        style: "Classic Painted",
+        description: "Timeless painted shaker doors, oak islands and hand-finished woodwork built to last generations.",
+        images: [heritage1, heritage2, heritage3],
+      },
+      {
+        name: "Harvard",
+        style: "Modern Luxe",
+        description: "Bold matte tones, walnut interiors and marble surfaces — a confident contemporary statement.",
+        images: [heritage4, heritage5],
+      },
     ],
   },
-  regency: {
-    name: "Regency",
-    tag: "Traditional Shaker",
-    category: "Bedrooms",
-    description:
-      "Classic shaker fitted wardrobes hand-painted in our workshop. Panelled doors, solid timber frames and heritage hardware — engineered for a lifetime of quiet elegance.",
-    images: [
-      { src: regency1, label: "Sage Green · Brass" },
-      { src: regency2, label: "Classic Cream · Chrome" },
-      { src: regency3, label: "Heritage Blue · Antique Brass" },
-      { src: regency4, label: "Dove Grey · Brushed Nickel" },
-      { src: regency5, label: "Deep Burgundy · Brass" },
+  bedrooms: {
+    name: "Bedrooms",
+    tag: "Fitted Wardrobes",
+    hero: serviceWardrobes,
+    intro:
+      "Floor-to-ceiling fitted wardrobes and dressing rooms tailored to the exact geometry of your room, with bespoke internals and integrated lighting.",
+    subRanges: [
+      {
+        name: "Waterford",
+        style: "Modern Handleless",
+        description: "Sleek architectural wardrobes with push-to-open doors, smoked glass and integrated LED lighting.",
+        images: [urbano1, urbano2, urbano3],
+      },
+      {
+        name: "Wexford",
+        style: "Contemporary Gloss",
+        description: "High-gloss fronts, brushed metal detailing and considered material pairings for a refined finish.",
+        images: [urbano4, urbano5],
+      },
+      {
+        name: "New England",
+        style: "Classic Shaker",
+        description: "Hand-painted shaker wardrobes with panelled doors, solid timber frames and heritage hardware.",
+        images: [regency1, regency2, regency3],
+      },
+      {
+        name: "Windsor",
+        style: "Traditional Painted",
+        description: "Elegant painted wardrobes in muted heritage tones — quiet, timeless and beautifully proportioned.",
+        images: [regency4, regency5],
+      },
     ],
   },
-  aurelia: {
-    name: "Aurelia",
-    tag: "Handleless Luxe",
-    category: "Kitchens",
-    description:
-      "Our flagship handleless kitchen — minimalist silhouettes, deep matte lacquers and considered material pairings. Marble worktops, brass detailing and integrated appliances throughout.",
-    images: [
-      { src: aurelia1, label: "Forest Green · Brass" },
-      { src: aurelia2, label: "Cashmere High Gloss" },
-      { src: aurelia3, label: "Matte Black · Walnut Island" },
-      { src: aurelia4, label: "Dusty Blue · Marble" },
-      { src: aurelia5, label: "Terracotta · Oak" },
-    ],
-  },
-  heritage: {
-    name: "Heritage",
-    tag: "Classic Painted",
-    category: "Kitchens",
-    description:
-      "A timeless English painted kitchen. Deep drawers, in-frame cabinetry and a choice of hand-mixed heritage colours — designed to sit beautifully in both period and new-build homes.",
-    images: [
-      { src: heritage1, label: "Sage · Brass Cups" },
-      { src: heritage2, label: "Stone Cream · Nickel" },
-      { src: heritage3, label: "Hunter Green · Oak Island" },
-      { src: heritage4, label: "Powder Blue · Brushed Brass" },
-      { src: heritage5, label: "Charcoal · Pewter" },
+  living: {
+    name: "Living",
+    tag: "Studies & Storage",
+    hero: serviceStudy,
+    intro:
+      "Built-in desks, bookcases, media walls and bespoke storage — designed around the way you work and live at home.",
+    subRanges: [
+      {
+        name: "Princeton",
+        style: "Home Study",
+        description: "Fully integrated home offices with built-in desks, shelving and concealed storage.",
+        images: [serviceStudy, gallery1],
+      },
+      {
+        name: "Kingston",
+        style: "Media Walls",
+        description: "Bespoke media walls with integrated lighting, cable management and display niches.",
+        images: [gallery2, gallery3],
+      },
+      {
+        name: "Chelsea",
+        style: "Library & Storage",
+        description: "Floor-to-ceiling bookcases and living room storage tailored to your collection.",
+        images: [gallery4, serviceWardrobes],
+      },
     ],
   },
 };
 
 export const Route = createFileRoute("/ranges/$rangeId")({
   loader: ({ params }) => {
-    const range = RANGES[params.rangeId];
-    if (!range) throw notFound();
-    return { range };
+    const category = CATEGORIES[params.rangeId];
+    if (!category) throw notFound();
+    return { category };
   },
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.range.name} — JFS Home Interiors` },
-          { name: "description", content: `${loaderData.range.name} · ${loaderData.range.tag}. ${loaderData.range.description}` },
-          { property: "og:title", content: `${loaderData.range.name} — JFS Home Interiors` },
-          { property: "og:description", content: loaderData.range.description },
-          { property: "og:image", content: loaderData.range.images[0].src },
+          { title: `${loaderData.category.name} — JFS Home Interiors` },
+          { name: "description", content: `${loaderData.category.name} · ${loaderData.category.intro}` },
+          { property: "og:title", content: `${loaderData.category.name} — JFS Home Interiors` },
+          { property: "og:description", content: loaderData.category.intro },
+          { property: "og:image", content: loaderData.category.hero },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "Range — JFS Home Interiors" }],
+      : [{ title: "Portfolio — JFS Home Interiors" }],
   }),
   notFoundComponent: () => (
     <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="font-serif text-4xl">Range not found</h1>
-      <Link to="/" className="text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold">
-        Back to home
+      <h1 className="font-serif text-4xl">Category not found</h1>
+      <Link to="/" hash="ranges" className="text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold">
+        Back to portfolio
       </Link>
     </div>
   ),
-  errorComponent: ({ reset }) => {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6 text-center">
-        <h1 className="font-serif text-3xl">Something went wrong</h1>
-        <button onClick={() => reset()} className="text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold">
-          Try again
-        </button>
-      </div>
-    );
-  },
-  component: RangeDetail,
+  errorComponent: ({ reset }) => (
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6 text-center">
+      <h1 className="font-serif text-3xl">Something went wrong</h1>
+      <button onClick={() => reset()} className="text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold">
+        Try again
+      </button>
+    </div>
+  ),
+  component: CategoryDetail,
 });
 
 const PHONE = "07412 569827";
 const PHONE_HREF = "tel:+447412569827";
 
-function RangeDetail() {
-  const { range } = Route.useLoaderData();
+function CategoryDetail() {
+  const { category } = Route.useLoaderData();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Top bar */}
       <header className="bg-[color:var(--forest-deep)] text-cream">
         <div className="max-w-[1500px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           <Link to="/" className="font-serif text-2xl tracking-tight">
             JFS<span className="text-gold">.</span>
           </Link>
-          <Link to="/" hash="ranges" className="text-[11px] uppercase tracking-[0.25em] hover:text-gold transition">
-            ← All Ranges
+          <Link to="/" hash="ranges" className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] hover:text-gold transition">
+            ← Portfolio
           </Link>
         </div>
       </header>
 
       {/* Hero */}
       <section className="relative bg-[color:var(--forest-deep)] text-cream">
-        <img src={range.images[0].src} alt={range.name} className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-40">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-gold">{range.category} · {range.tag}</span>
-          <h1 className="font-serif text-6xl md:text-8xl mt-6">
-            {range.name}
-          </h1>
-          <p className="mt-8 max-w-2xl text-cream/85 leading-relaxed text-lg">{range.description}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/" hash="contact" className="bg-gold text-[color:var(--forest-deep)] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] hover:brightness-110 transition">
-              Book a home survey
-            </Link>
-            <a href={PHONE_HREF} className="border border-cream/40 text-cream px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] hover:bg-cream hover:text-[color:var(--forest-deep)] transition">
-              Call {PHONE}
-            </a>
-          </div>
+        <img src={category.hero} alt={category.name} className="absolute inset-0 h-full w-full object-cover opacity-40" />
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-36">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold">{category.tag}</span>
+          <h1 className="font-serif text-5xl md:text-8xl mt-6">{category.name}</h1>
+          <p className="mt-8 max-w-2xl text-cream/85 leading-relaxed text-base md:text-lg">{category.intro}</p>
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="px-6 md:px-12 py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">Finishes & Colourways</span>
-            <h2 className="font-serif text-4xl md:text-5xl mt-4">Available in <em>five</em> signature palettes.</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {range.images.map((img: { src: string; label: string }, i: number) => (
-              <figure key={i} className="group overflow-hidden">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={img.src}
-                    alt={`${range.name} — ${img.label}`}
-                    loading="lazy"
-                    className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 bg-[color:var(--forest-deep)]/85 backdrop-blur px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold border border-gold/30">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                </div>
-                <figcaption className="mt-4 flex items-center gap-3">
-                  <span className="h-px flex-1 bg-border" />
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">{img.label}</span>
-                  <span className="h-px flex-1 bg-border" />
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+      {/* Sub-ranges */}
+      <section className="px-6 md:px-12 py-20">
+        <div className="max-w-7xl mx-auto space-y-24">
+          {category.subRanges.map((sub, i) => (
+            <article key={sub.name} className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-4 lg:sticky lg:top-10">
+                <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">
+                  {String(i + 1).padStart(2, "0")} · {sub.style}
+                </span>
+                <h2 className="font-serif text-4xl md:text-5xl mt-4">{sub.name}</h2>
+                <div className="mt-5 h-px w-16 bg-gold" />
+                <p className="mt-6 text-muted-foreground leading-relaxed">{sub.description}</p>
+                <Link
+                  to="/"
+                  hash="contact"
+                  className="mt-8 inline-block text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold hover:text-[color:var(--forest)] transition"
+                >
+                  Enquire about {sub.name}
+                </Link>
+              </div>
+              <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
+                {sub.images.map((src, j) => (
+                  <figure
+                    key={j}
+                    className={`overflow-hidden ${sub.images.length === 3 && j === 0 ? "sm:col-span-2" : ""}`}
+                  >
+                    <img
+                      src={src}
+                      alt={`${sub.name} — view ${j + 1}`}
+                      loading="lazy"
+                      className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </figure>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
       <section className="bg-[color:var(--forest)] text-cream px-6 md:px-12 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl">Design your {range.name}.</h2>
+          <h2 className="font-serif text-4xl md:text-5xl">Design your {category.name.toLowerCase()}.</h2>
           <p className="mt-6 text-cream/75 max-w-xl mx-auto">
-            Book a free, no-obligation home survey. We'll bring the swatches and finalise your ideal finish in person.
+            Book a free, no-obligation home survey. We'll bring the swatches and finalise every detail in person.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Link to="/" hash="contact" className="bg-gold text-[color:var(--forest-deep)] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] hover:brightness-110 transition">
               Request a callback
             </Link>
             <Link to="/" hash="ranges" className="border border-cream/40 text-cream px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] hover:bg-cream hover:text-[color:var(--forest-deep)] transition">
-              View other ranges
+              View other categories
             </Link>
           </div>
         </div>
