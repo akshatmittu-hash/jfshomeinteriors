@@ -207,7 +207,7 @@ function CategoryDetail() {
       {/* Sub-ranges */}
       <section className="px-6 md:px-12 py-20">
         <div className="max-w-7xl mx-auto space-y-24">
-          {category.subRanges.map((sub, i) => (
+          {category.subRanges.map((sub: SubRange, i: number) => (
             <article key={sub.name} className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-4 lg:sticky lg:top-10">
                 <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">
