@@ -117,14 +117,14 @@ function TopBar() {
   return (
     <header className="absolute top-0 inset-x-0 z-20">
       <div className="max-w-[1500px] mx-auto px-6 md:px-10 h-24 flex items-center justify-between text-cream">
-        <div className="flex items-center gap-6 md:gap-8 text-[11px] uppercase tracking-[0.25em]">
-          <a href="#services" className="hover:text-gold transition">Kitchens</a>
-          <a href="#ranges" className="hidden md:inline hover:text-gold transition">Bedrooms</a>
+        <div className="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]">
+          <a href="#ranges" className="hover:text-gold transition">Kitchens</a>
+          <a href="#ranges" className="hover:text-gold transition">Bedrooms</a>
         </div>
         <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
           JFS<span className="text-gold">.</span>
         </a>
-        <div className="flex items-center gap-6 md:gap-8 text-[11px] uppercase tracking-[0.25em]">
+        <div className="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]">
           <a href="#reviews" className="hidden md:inline hover:text-gold transition">Reviews</a>
           <a href="#contact" className="hover:text-gold transition">Book a Visit</a>
           <a href={PHONE_HREF} className="hidden md:inline-flex hover:text-gold transition items-center gap-2"><PhoneIcon />Call</a>
@@ -210,10 +210,9 @@ function Services() {
 
 /* ---------------- RANGES / GALLERY ---------------- */
 const ranges = [
-  { slug: "urbano", name: "Urbano", tag: "Modern Contemporary", img: gallery1 },
-  { slug: "regency", name: "Regency", tag: "Traditional Shaker", img: gallery2 },
-  { slug: "aurelia", name: "Aurelia", tag: "Handleless Luxe", img: gallery3 },
-  { slug: "heritage", name: "Heritage", tag: "Classic Painted", img: gallery4 },
+  { slug: "kitchens", name: "Kitchens", tag: "Designer Kitchens", img: serviceKitchen },
+  { slug: "bedrooms", name: "Bedrooms", tag: "Fitted Wardrobes", img: serviceWardrobes },
+  { slug: "living", name: "Living", tag: "Studies & Storage", img: serviceStudy },
 ];
 
 function Ranges() {
@@ -222,7 +221,7 @@ function Ranges() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">Our Ranges</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--royal)]">Our Portfolio</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">A curated portfolio.</h2>
           </div>
           <a href={PHONE_HREF} className="text-[11px] uppercase tracking-[0.25em] underline underline-offset-8 decoration-gold hover:text-[color:var(--forest)] transition">
@@ -230,7 +229,7 @@ function Ranges() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {ranges.map((r) => (
             <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} className="group block relative overflow-hidden">
               <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
