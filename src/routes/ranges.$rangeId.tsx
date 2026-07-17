@@ -225,7 +225,7 @@ function CategoryDetail() {
                 </Link>
               </div>
               <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
-                {sub.images.map((src, j) => (
+                {sub.images.map((src: string, j: number) => (
                   <figure
                     key={j}
                     className={`overflow-hidden ${sub.images.length === 3 && j === 0 ? "sm:col-span-2" : ""}`}
