@@ -26,6 +26,12 @@ import gallery4 from "@/assets/gallery-4.jpg";
 import serviceStudy from "@/assets/service-study.jpg";
 import serviceWardrobes from "@/assets/service-wardrobes.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
+import livingLounge1 from "@/assets/living-lounge-1.jpg";
+import livingLounge2 from "@/assets/living-lounge-2.jpg";
+import livingLounge3 from "@/assets/living-lounge-3.jpg";
+import livingLibrary1 from "@/assets/living-library-1.jpg";
+import livingOffice1 from "@/assets/living-office-1.jpg";
+import livingOffice2 from "@/assets/living-office-2.jpg";
 
 type SubRange = {
   name: string;
