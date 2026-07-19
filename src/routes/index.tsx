@@ -1,12 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroWardrobe from "@/assets/hero-wardrobe.jpg";
-import serviceWardrobes from "@/assets/service-wardrobes.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
 import serviceStudy from "@/assets/service-study.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
+import bedroomHeroA from "@/assets/bedroom-hero-a.jpg";
+import bedroomHeroB from "@/assets/bedroom-hero-b.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -140,6 +137,22 @@ function MenuIcon() {
 function PhoneIcon() {
   return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg>;
 }
+function InstagramIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+function FacebookIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.6c0-.9.25-1.5 1.55-1.5H16.5V4.4c-.3 0-1.25-.1-2.35-.1-2.35 0-3.95 1.4-3.95 4v2.2H7.7v3h2.5V21h3.3z" />
+    </svg>
+  );
+}
 
 /* ---------------- INTRO ---------------- */
 function Intro() {
@@ -163,7 +176,7 @@ function Intro() {
 
 /* ---------------- SERVICES ---------------- */
 const services = [
-  { n: "01", tag: "Bedrooms", title: "Fitted Wardrobes", img: serviceWardrobes,
+  { n: "01", tag: "Bedrooms", title: "Fitted Wardrobes", img: bedroomHeroA,
     desc: "Wall-to-wall wardrobes tailored to the exact geometry of your room, with bespoke internals and integrated lighting." },
   { n: "02", tag: "Kitchens", title: "Designer Kitchens", img: serviceKitchen,
     desc: "Hand-finished cabinetry, considered hardware and premium surfaces — shaker to handleless contemporary." },
@@ -211,7 +224,7 @@ function Services() {
 /* ---------------- RANGES / GALLERY ---------------- */
 const ranges = [
   { slug: "kitchens", name: "Kitchens", tag: "Designer Kitchens", img: serviceKitchen },
-  { slug: "bedrooms", name: "Bedrooms", tag: "Fitted Wardrobes", img: serviceWardrobes },
+  { slug: "bedrooms", name: "Bedrooms", tag: "Fitted Wardrobes", img: bedroomHeroB },
   { slug: "living", name: "Living", tag: "Studies & Storage", img: serviceStudy },
 ];
 
@@ -328,15 +341,27 @@ function Contact() {
             <Row label="Call" value={PHONE} href={PHONE_HREF} />
             <Row label="Hours" value="Mon–Sat · 09:00 – 18:00" />
             <div className="flex items-start gap-6">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-gold pt-1.5 w-16 shrink-0">Social</span>
-              <a
-                href="https://www.instagram.com/therangebedrooms?igsh=MXFqeWExa3M4czh2Yw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg hover:text-gold transition"
-              >
-                Instagram
-              </a>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-gold pt-2 w-16 shrink-0">Social</span>
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.instagram.com/therangebedrooms?igsh=MXFqeWExa3M4czh2Yw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-11 h-11 flex items-center justify-center border border-gold/40 text-cream hover:bg-gold hover:text-[color:var(--forest-deep)] transition"
+                >
+                  <InstagramIcon />
+                </a>
+                <a
+                  href="https://www.facebook.com/therangebedrooms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-11 h-11 flex items-center justify-center border border-gold/40 text-cream hover:bg-gold hover:text-[color:var(--forest-deep)] transition"
+                >
+                  <FacebookIcon />
+                </a>
+              </div>
             </div>
           </div>
         </div>

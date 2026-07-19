@@ -1,31 +1,18 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import urbano1 from "@/assets/urbano-1.jpg";
-import urbano2 from "@/assets/urbano-2.jpg";
-import urbano3 from "@/assets/urbano-3.jpg";
-import urbano4 from "@/assets/urbano-4.jpg";
-import urbano5 from "@/assets/urbano-5.jpg";
-import regency1 from "@/assets/regency-1.jpg";
-import regency2 from "@/assets/regency-2.jpg";
-import regency3 from "@/assets/regency-3.jpg";
-import regency4 from "@/assets/regency-4.jpg";
-import regency5 from "@/assets/regency-5.jpg";
-import aurelia1 from "@/assets/aurelia-1.jpg";
-import aurelia2 from "@/assets/aurelia-2.jpg";
-import aurelia3 from "@/assets/aurelia-3.jpg";
-import aurelia4 from "@/assets/aurelia-4.jpg";
-import aurelia5 from "@/assets/aurelia-5.jpg";
-import heritage1 from "@/assets/heritage-1.jpg";
-import heritage2 from "@/assets/heritage-2.jpg";
-import heritage3 from "@/assets/heritage-3.jpg";
-import heritage4 from "@/assets/heritage-4.jpg";
-import heritage5 from "@/assets/heritage-5.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import serviceStudy from "@/assets/service-study.jpg";
-import serviceWardrobes from "@/assets/service-wardrobes.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
+import bedroomHeroA from "@/assets/bedroom-hero-a.jpg";
+import bedroomHeroB from "@/assets/bedroom-hero-b.jpg";
+import kitchenSage from "@/assets/kitchen-sage.jpg";
+import kitchenCharcoal from "@/assets/kitchen-charcoal.jpg";
+import kitchenCream from "@/assets/kitchen-cream.jpg";
+import kitchenNavy from "@/assets/kitchen-navy.jpg";
+import bedroomWalnut from "@/assets/bedroom-walnut.jpg";
+import bedroomWhite from "@/assets/bedroom-white.jpg";
+import bedroomBlue from "@/assets/bedroom-blue.jpg";
+import bedroomBurgundy from "@/assets/bedroom-burgundy.jpg";
 import livingLounge1 from "@/assets/living-lounge-1.jpg";
 import livingLounge2 from "@/assets/living-lounge-2.jpg";
 import livingLounge3 from "@/assets/living-lounge-3.jpg";
@@ -58,60 +45,60 @@ const CATEGORIES: Record<string, Category> = {
     subRanges: [
       {
         name: "Ashbourne",
-        style: "In-frame Shaker",
-        description: "A quintessential English painted kitchen with in-frame cabinetry, deep drawers and heritage colourways.",
-        images: [aurelia1, aurelia2, aurelia3],
+        style: "In-frame Shaker · Sage",
+        description: "A quintessential English painted kitchen with in-frame cabinetry, deep drawers and heritage sage-green colourways.",
+        images: [kitchenSage, kitchenCream],
       },
       {
         name: "Austin",
-        style: "Handleless Contemporary",
-        description: "Minimalist push-to-open cabinetry paired with matte lacquers and integrated brass detailing.",
-        images: [aurelia4, aurelia5],
+        style: "Handleless Contemporary · Charcoal",
+        description: "Minimalist push-to-open cabinetry in matte charcoal, paired with walnut islands and warm brass detailing.",
+        images: [kitchenCharcoal, serviceKitchen],
       },
       {
         name: "Cranbrook",
-        style: "Classic Painted",
-        description: "Timeless painted shaker doors, oak islands and hand-finished woodwork built to last generations.",
-        images: [heritage1, heritage2, heritage3],
+        style: "Classic Painted · Cream & Oak",
+        description: "Timeless painted shaker doors in soft cream, oak islands and hand-finished woodwork built to last generations.",
+        images: [kitchenCream, kitchenSage],
       },
       {
         name: "Harvard",
-        style: "Modern Luxe",
-        description: "Bold matte tones, walnut interiors and marble surfaces — a confident contemporary statement.",
-        images: [heritage4, heritage5],
+        style: "Modern Luxe · Deep Navy",
+        description: "Bold deep-navy cabinetry, marble backsplashes and brushed gold — a confident contemporary statement.",
+        images: [kitchenNavy, kitchenCharcoal],
       },
     ],
   },
   bedrooms: {
     name: "Bedrooms",
     tag: "Fitted Wardrobes",
-    hero: serviceWardrobes,
+    hero: bedroomHeroB,
     intro:
       "Floor-to-ceiling fitted wardrobes and dressing rooms tailored to the exact geometry of your room, with bespoke internals and integrated lighting.",
     subRanges: [
       {
         name: "Waterford",
-        style: "Modern Handleless",
-        description: "Sleek architectural wardrobes with push-to-open doors, smoked glass and integrated LED lighting.",
-        images: [urbano1, urbano2, urbano3],
+        style: "Modern Handleless · Walnut",
+        description: "Sleek architectural wardrobes in warm walnut with smoked glass fronts and integrated LED lighting.",
+        images: [bedroomWalnut, bedroomHeroB],
       },
       {
         name: "Wexford",
-        style: "Contemporary Gloss",
-        description: "High-gloss fronts, brushed metal detailing and considered material pairings for a refined finish.",
-        images: [urbano4, urbano5],
+        style: "Contemporary Gloss · Pure White",
+        description: "High-gloss white fronts, brushed metal detailing and considered material pairings for a light, refined finish.",
+        images: [bedroomWhite, bedroomHeroA],
       },
       {
         name: "New England",
-        style: "Classic Shaker",
-        description: "Hand-painted shaker wardrobes with panelled doors, solid timber frames and heritage hardware.",
-        images: [regency1, regency2, regency3],
+        style: "Classic Shaker · Powder Blue",
+        description: "Hand-painted shaker wardrobes in soft powder blue, panelled doors, solid timber frames and heritage brass hardware.",
+        images: [bedroomBlue, bedroomHeroA],
       },
       {
         name: "Windsor",
-        style: "Traditional Painted",
-        description: "Elegant painted wardrobes in muted heritage tones — quiet, timeless and beautifully proportioned.",
-        images: [regency4, regency5],
+        style: "Traditional Painted · Burgundy",
+        description: "Elegant painted wardrobes in deep burgundy with brass detailing — richly proportioned and beautifully atmospheric.",
+        images: [bedroomBurgundy, bedroomHeroB],
       },
     ],
   },
