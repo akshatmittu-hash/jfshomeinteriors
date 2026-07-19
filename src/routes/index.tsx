@@ -1,12 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroWardrobe from "@/assets/hero-wardrobe.jpg";
-import serviceWardrobes from "@/assets/service-wardrobes.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
 import serviceStudy from "@/assets/service-study.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
+import bedroomHeroA from "@/assets/bedroom-hero-a.jpg";
+import bedroomHeroB from "@/assets/bedroom-hero-b.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
