@@ -26,6 +26,12 @@ import gallery4 from "@/assets/gallery-4.jpg";
 import serviceStudy from "@/assets/service-study.jpg";
 import serviceWardrobes from "@/assets/service-wardrobes.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
+import livingLounge1 from "@/assets/living-lounge-1.jpg";
+import livingLounge2 from "@/assets/living-lounge-2.jpg";
+import livingLounge3 from "@/assets/living-lounge-3.jpg";
+import livingLibrary1 from "@/assets/living-library-1.jpg";
+import livingOffice1 from "@/assets/living-office-1.jpg";
+import livingOffice2 from "@/assets/living-office-2.jpg";
 
 type SubRange = {
   name: string;
@@ -111,28 +117,28 @@ const CATEGORIES: Record<string, Category> = {
   },
   living: {
     name: "Living",
-    tag: "Studies & Storage",
-    hero: serviceStudy,
+    tag: "Living Rooms & Offices",
+    hero: livingLounge1,
     intro:
-      "Built-in desks, bookcases, media walls and bespoke storage — designed around the way you work and live at home.",
+      "Bespoke living rooms, media walls, home offices and libraries — designed around the way you work, relax and live at home.",
     subRanges: [
       {
-        name: "Princeton",
-        style: "Home Study",
-        description: "Fully integrated home offices with built-in desks, shelving and concealed storage.",
-        images: [serviceStudy, gallery1],
+        name: "Kingston",
+        style: "Living Rooms & Media Walls",
+        description: "Fitted alcove cabinetry, integrated media walls and hand-painted joinery framing the heart of your home.",
+        images: [livingLounge1, livingLounge2, livingLounge3],
       },
       {
-        name: "Kingston",
-        style: "Media Walls",
-        description: "Bespoke media walls with integrated lighting, cable management and display niches.",
-        images: [gallery2, gallery3],
+        name: "Princeton",
+        style: "Home Offices & Studies",
+        description: "Fully integrated home offices with bespoke desks, shelving, concealed storage and considered task lighting.",
+        images: [livingOffice1, livingOffice2, serviceStudy],
       },
       {
         name: "Chelsea",
-        style: "Library & Storage",
-        description: "Floor-to-ceiling bookcases and living room storage tailored to your collection.",
-        images: [gallery4, serviceWardrobes],
+        style: "Libraries & Storage",
+        description: "Floor-to-ceiling bookcases and living room storage tailored to your collection, with brass and leather detailing.",
+        images: [livingLibrary1, gallery2, gallery4],
       },
     ],
   },
