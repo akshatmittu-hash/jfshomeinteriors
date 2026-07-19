@@ -160,7 +160,7 @@ function Intro() {
 
 /* ---------------- SERVICES ---------------- */
 const services = [
-  { n: "01", tag: "Bedrooms", title: "Fitted Wardrobes", img: serviceWardrobes,
+  { n: "01", tag: "Bedrooms", title: "Fitted Wardrobes", img: bedroomHeroA,
     desc: "Wall-to-wall wardrobes tailored to the exact geometry of your room, with bespoke internals and integrated lighting." },
   { n: "02", tag: "Kitchens", title: "Designer Kitchens", img: serviceKitchen,
     desc: "Hand-finished cabinetry, considered hardware and premium surfaces — shaker to handleless contemporary." },
@@ -208,7 +208,7 @@ function Services() {
 /* ---------------- RANGES / GALLERY ---------------- */
 const ranges = [
   { slug: "kitchens", name: "Kitchens", tag: "Designer Kitchens", img: serviceKitchen },
-  { slug: "bedrooms", name: "Bedrooms", tag: "Fitted Wardrobes", img: serviceWardrobes },
+  { slug: "bedrooms", name: "Bedrooms", tag: "Fitted Wardrobes", img: bedroomHeroB },
   { slug: "living", name: "Living", tag: "Studies & Storage", img: serviceStudy },
 ];
 
