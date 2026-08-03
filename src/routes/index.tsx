@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroWardrobe from "@/assets/hero-wardrobe.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
@@ -116,7 +117,7 @@ function TopBar() {
       <div className="max-w-[1500px] mx-auto px-6 md:px-10 h-24 flex items-center justify-between text-cream">
         <div className="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]">
           <a href="#ranges" className="hover:text-gold transition">Kitchens</a>
-          <a href="#ranges" className="hover:text-gold transition">Bedrooms</a>
+          <Link to="/ranges/$rangeId" params={{ rangeId: "bedrooms" }} className="hover:text-gold transition">Bedrooms</Link>
         </div>
         <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
           JFS<span className="text-gold">.</span>
@@ -366,21 +367,47 @@ function Contact() {
           </div>
         </div>
 
-        <form onSubmit={(e) => e.preventDefault()} className="bg-cream/5 border border-gold/20 p-8 md:p-10 space-y-6">
-          <h3 className="font-serif text-2xl mb-2">Request a callback</h3>
-          <Field label="Name" name="name" type="text" />
-          <Field label="Phone" name="phone" type="tel" />
-          <Field label="Project" name="project" type="text" placeholder="Fitted wardrobe, kitchen…" />
-          <div className="space-y-2">
-            <label className="text-[10px] uppercase tracking-[0.3em] text-cream/60">Message</label>
-            <textarea rows={4} className="w-full bg-transparent border-b border-cream/25 focus:border-gold outline-none py-3 text-sm resize-none" />
-          </div>
-          <button className="w-full bg-gold text-[color:var(--forest-deep)] py-4 text-[11px] font-medium uppercase tracking-[0.3em] hover:brightness-110 transition">
-            Send request
-          </button>
-        </form>
+        <CallbackForm />
       </div>
     </section>
+  );
+}
+
+const WHATSAPP_NUMBER = "447412569827";
+
+function CallbackForm() {
+  const [form, setForm] = useState({ name: "", phone: "", project: "", message: "" });
+
+  const update = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = [
+      "New callback request — JFS Home Interiors",
+      `Name: ${form.name || "—"}`,
+      `Phone: ${form.phone || "—"}`,
+      `Project: ${form.project || "—"}`,
+      `Message: ${form.message || "—"}`,
+    ].join("\n");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-cream/5 border border-gold/20 p-8 md:p-10 space-y-6">
+      <h3 className="font-serif text-2xl mb-2">Request a callback</h3>
+      <Field label="Name" name="name" type="text" value={form.name} onChange={update("name")} />
+      <Field label="Phone" name="phone" type="tel" value={form.phone} onChange={update("phone")} />
+      <Field label="Project" name="project" type="text" placeholder="Fitted wardrobe, kitchen…" value={form.project} onChange={update("project")} />
+      <div className="space-y-2">
+        <label htmlFor="message" className="text-[10px] uppercase tracking-[0.3em] text-cream/60">Message</label>
+        <textarea id="message" name="message" rows={4} value={form.message} onChange={update("message")}
+          className="w-full bg-transparent border-b border-cream/25 focus:border-gold outline-none py-3 text-sm resize-none" />
+      </div>
+      <button type="submit" className="w-full bg-gold text-[color:var(--forest-deep)] py-4 text-[11px] font-medium uppercase tracking-[0.3em] hover:brightness-110 transition">
+        Send request via WhatsApp
+      </button>
+    </form>
   );
 }
 
@@ -394,11 +421,11 @@ function Row({ label, value, href }: { label: string; value: string; href?: stri
   );
 }
 
-function Field({ label, name, type, placeholder }: { label: string; name: string; type: string; placeholder?: string }) {
+function Field({ label, name, type, placeholder, value, onChange }: { label: string; name: string; type: string; placeholder?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
     <div className="space-y-2">
       <label htmlFor={name} className="text-[10px] uppercase tracking-[0.3em] text-cream/60">{label}</label>
-      <input id={name} name={name} type={type} placeholder={placeholder}
+      <input id={name} name={name} type={type} placeholder={placeholder} value={value} onChange={onChange}
         className="w-full bg-transparent border-b border-cream/25 focus:border-gold outline-none py-3 text-sm placeholder:text-cream/30" />
     </div>
   );
@@ -410,7 +437,6 @@ function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em]">
         <span className="font-serif text-lg normal-case tracking-tight text-cream">JFS <em className="text-gold">Home Interiors</em></span>
         <span>© {new Date().getFullYear()} · UK</span>
-        <a href={PHONE_HREF} className="hover:text-gold transition">{PHONE}</a>
       </div>
     </footer>
   );

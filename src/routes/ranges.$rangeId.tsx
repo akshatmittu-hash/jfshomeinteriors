@@ -259,7 +259,6 @@ function CategoryDetail() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em]">
           <span className="font-serif text-lg normal-case tracking-tight text-cream">JFS <em className="text-gold">Home Interiors</em></span>
           <span>© {new Date().getFullYear()} · UK</span>
-          <a href={PHONE_HREF} className="hover:text-gold transition">{PHONE}</a>
         </div>
       </footer>
     </div>
