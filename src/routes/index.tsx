@@ -118,6 +118,7 @@ function TopBar() {
         <div className="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]">
           <a href="#ranges" className="hover:text-gold transition">Kitchens</a>
           <a href="#bedrooms-range" className="hover:text-gold transition">Bedrooms</a>
+          <a href="#living-range" className="hover:text-gold transition">Living</a>
         </div>
         <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
           JFS<span className="text-gold">.</span>
@@ -245,7 +246,7 @@ function Ranges() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {ranges.map((r) => (
-            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} id={r.slug === "bedrooms" ? "bedrooms-range" : undefined} className="group block relative overflow-hidden">
+            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} id={r.slug === "bedrooms" ? "bedrooms-range" : r.slug === "living" ? "living-range" : undefined} className="group block relative overflow-hidden">
               <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--forest-deep)]/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 text-cream">
@@ -376,7 +377,7 @@ function Contact() {
 const WHATSAPP_NUMBER = "447412569827";
 
 function CallbackForm() {
-  const [form, setForm] = useState({ name: "", phone: "", project: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", address: "", project: "", message: "" });
 
   const update = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -387,6 +388,7 @@ function CallbackForm() {
       "New callback request — JFS Home Interiors",
       `Name: ${form.name || "—"}`,
       `Phone: ${form.phone || "—"}`,
+      `Address: ${form.address || "—"}`,
       `Project: ${form.project || "—"}`,
       `Message: ${form.message || "—"}`,
     ].join("\n");
@@ -398,6 +400,7 @@ function CallbackForm() {
       <h3 className="font-serif text-2xl mb-2">Request a callback</h3>
       <Field label="Name" name="name" type="text" value={form.name} onChange={update("name")} />
       <Field label="Phone" name="phone" type="tel" value={form.phone} onChange={update("phone")} />
+      <Field label="Address" name="address" type="text" placeholder="House number and postcode" value={form.address} onChange={update("address")} />
       <Field label="Project" name="project" type="text" placeholder="Fitted wardrobe, kitchen…" value={form.project} onChange={update("project")} />
       <div className="space-y-2">
         <label htmlFor="message" className="text-[10px] uppercase tracking-[0.3em] text-cream/60">Message</label>
