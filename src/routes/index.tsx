@@ -117,7 +117,7 @@ function TopBar() {
       <div className="max-w-[1500px] mx-auto px-6 md:px-10 h-24 flex items-center justify-between text-cream">
         <div className="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]">
           <a href="#ranges" className="hover:text-gold transition">Kitchens</a>
-          <Link to="/ranges/$rangeId" params={{ rangeId: "bedrooms" }} className="hover:text-gold transition">Bedrooms</Link>
+          <a href="#bedrooms-range" className="hover:text-gold transition">Bedrooms</a>
         </div>
         <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
           JFS<span className="text-gold">.</span>
@@ -245,7 +245,7 @@ function Ranges() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {ranges.map((r) => (
-            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} className="group block relative overflow-hidden">
+            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} id={r.slug === "bedrooms" ? "bedrooms-range" : undefined} className="group block relative overflow-hidden">
               <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--forest-deep)]/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 text-cream">
