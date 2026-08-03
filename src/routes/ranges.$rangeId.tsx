@@ -115,10 +115,23 @@ const CATEGORIES: Record<string, Category> = {
     subRanges: [
       {
         name: "Kingston",
-        style: "Living Rooms & Media Walls",
-        description: "Fitted alcove cabinetry, integrated media walls and hand-painted joinery framing the heart of your home.",
-        images: [livingLounge1, livingLounge2, livingLounge3],
+        style: "Living Rooms · Sage & Cream",
+        description: "Fitted alcove cabinetry and media walls hand-painted in heritage sage or soft cream with warm oak shelving.",
+        images: [livingSage, livingCream, livingLounge1],
       },
+      {
+        name: "Belgravia",
+        style: "Living Rooms · Deep Navy & Charcoal",
+        description: "Bold deep-navy and charcoal joinery with walnut panelling, marble hearths and integrated lighting for a richer, more dramatic room.",
+        images: [livingNavy, livingCharcoal, livingLounge2],
+      },
+      {
+        name: "Marlow",
+        style: "Living Rooms · Warm Neutrals",
+        description: "Softly toned taupe and stone cabinetry with brass detailing — calm, light-filled living spaces built around your alcoves.",
+        images: [livingLounge3, livingLounge1, livingCream],
+      },
+
       {
         name: "Princeton",
         style: "Home Offices & Studies",
