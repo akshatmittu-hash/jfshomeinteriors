@@ -19,6 +19,10 @@ import livingLounge3 from "@/assets/living-lounge-3.jpg";
 import livingLibrary1 from "@/assets/living-library-1.jpg";
 import livingOffice1 from "@/assets/living-office-1.jpg";
 import livingOffice2 from "@/assets/living-office-2.jpg";
+import livingSage from "@/assets/living-sage.jpg";
+import livingNavy from "@/assets/living-navy.jpg";
+import livingCream from "@/assets/living-cream.jpg";
+import livingCharcoal from "@/assets/living-charcoal.jpg";
 
 type SubRange = {
   name: string;
@@ -111,10 +115,23 @@ const CATEGORIES: Record<string, Category> = {
     subRanges: [
       {
         name: "Kingston",
-        style: "Living Rooms & Media Walls",
-        description: "Fitted alcove cabinetry, integrated media walls and hand-painted joinery framing the heart of your home.",
-        images: [livingLounge1, livingLounge2, livingLounge3],
+        style: "Living Rooms · Sage & Cream",
+        description: "Fitted alcove cabinetry and media walls hand-painted in heritage sage or soft cream with warm oak shelving.",
+        images: [livingSage, livingCream, livingLounge1],
       },
+      {
+        name: "Belgravia",
+        style: "Living Rooms · Deep Navy & Charcoal",
+        description: "Bold deep-navy and charcoal joinery with walnut panelling, marble hearths and integrated lighting for a richer, more dramatic room.",
+        images: [livingNavy, livingCharcoal, livingLounge2],
+      },
+      {
+        name: "Marlow",
+        style: "Living Rooms · Warm Neutrals",
+        description: "Softly toned taupe and stone cabinetry with brass detailing — calm, light-filled living spaces built around your alcoves.",
+        images: [livingLounge3, livingLounge1, livingCream],
+      },
+
       {
         name: "Princeton",
         style: "Home Offices & Studies",
@@ -168,8 +185,8 @@ export const Route = createFileRoute("/ranges/$rangeId")({
   component: CategoryDetail,
 });
 
-const PHONE = "07412 569827";
-const PHONE_HREF = "tel:+447412569827";
+
+
 
 function CategoryDetail() {
   const { category } = Route.useLoaderData();
@@ -259,7 +276,6 @@ function CategoryDetail() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em]">
           <span className="font-serif text-lg normal-case tracking-tight text-cream">JFS <em className="text-gold">Home Interiors</em></span>
           <span>© {new Date().getFullYear()} · UK</span>
-          <a href={PHONE_HREF} className="hover:text-gold transition">{PHONE}</a>
         </div>
       </footer>
     </div>
