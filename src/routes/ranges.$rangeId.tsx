@@ -19,6 +19,10 @@ import livingLounge3 from "@/assets/living-lounge-3.jpg";
 import livingLibrary1 from "@/assets/living-library-1.jpg";
 import livingOffice1 from "@/assets/living-office-1.jpg";
 import livingOffice2 from "@/assets/living-office-2.jpg";
+import livingSage from "@/assets/living-sage.jpg";
+import livingNavy from "@/assets/living-navy.jpg";
+import livingCream from "@/assets/living-cream.jpg";
+import livingCharcoal from "@/assets/living-charcoal.jpg";
 
 type SubRange = {
   name: string;
@@ -168,8 +172,8 @@ export const Route = createFileRoute("/ranges/$rangeId")({
   component: CategoryDetail,
 });
 
-const PHONE = "07412 569827";
-const PHONE_HREF = "tel:+447412569827";
+
+
 
 function CategoryDetail() {
   const { category } = Route.useLoaderData();
