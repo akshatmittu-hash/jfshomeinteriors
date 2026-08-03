@@ -245,7 +245,7 @@ function Ranges() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {ranges.map((r) => (
-            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} className="group block relative overflow-hidden">
+            <Link to="/ranges/$rangeId" params={{ rangeId: r.slug }} key={r.name} id={r.slug === "bedrooms" ? "bedrooms-range" : undefined} className="group block relative overflow-hidden">
               <img src={r.img} alt={r.name} loading="lazy" className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--forest-deep)]/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 inset-x-0 p-6 text-cream">
