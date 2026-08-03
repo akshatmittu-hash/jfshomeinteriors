@@ -118,7 +118,6 @@ function TopBar() {
         <div className="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]">
           <a href="#ranges" className="hover:text-gold transition">Kitchens</a>
           <a href="#bedrooms-range" className="hover:text-gold transition">Bedrooms</a>
-          <a href="#living-range" className="hover:text-gold transition">Living</a>
         </div>
         <a href="#top" className="font-serif text-2xl md:text-3xl tracking-tight">
           JFS<span className="text-gold">.</span>
