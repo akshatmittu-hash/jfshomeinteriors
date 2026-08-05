@@ -341,29 +341,6 @@ function Contact() {
             <Row label="Visit" value="67 Cove Road Farnborough GU14 0EX" />
             <Row label="Call" value={PHONE} href={PHONE_HREF} />
             <Row label="Hours" value="Mon–Sat · 09:00 – 18:00" />
-            <div className="flex items-start gap-6">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-gold pt-2 w-16 shrink-0">Social</span>
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://www.instagram.com/therangebedrooms?igsh=MXFqeWExa3M4czh2Yw=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="w-11 h-11 flex items-center justify-center border border-gold/40 text-cream hover:bg-gold hover:text-[color:var(--forest-deep)] transition"
-                >
-                  <InstagramIcon />
-                </a>
-                <a
-                  href="https://www.facebook.com/therangebedrooms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="w-11 h-11 flex items-center justify-center border border-gold/40 text-cream hover:bg-gold hover:text-[color:var(--forest-deep)] transition"
-                >
-                  <FacebookIcon />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
