@@ -107,6 +107,7 @@ export const OfferCard: React.FC = () => {
             fontSize: 300,
             lineHeight: 0.9,
             transform: `scale(${pulse})`,
+            fontFeatureSettings: '"lnum" 1',
           }}
         >
           10%
@@ -152,7 +153,7 @@ export const CtaCard: React.FC = () => (
     </div>
     <div style={{ height: 46 }} />
     <Reveal delay={10} dur={34} distance={50}>
-      <div style={{ fontFamily: display, color: CREAM, fontSize: 78, lineHeight: 1.25 }}>
+      <div style={{ fontFamily: display, color: CREAM, fontSize: 78, lineHeight: 1.25, fontFeatureSettings: '"lnum" 1' }}>
         67 Cove Road
         <br />
         <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>
