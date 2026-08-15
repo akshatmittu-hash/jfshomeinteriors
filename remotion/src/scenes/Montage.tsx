@@ -69,7 +69,7 @@ export const Montage: React.FC<Props> = ({
             <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>{italic}</span>
           </div>
         </Reveal>
-        <div style={{ height: 30, alignSelf: align }}>
+        <div style={{ height: 34, marginTop: 30, marginBottom: 26, alignSelf: align }}>
           <Rule width={140} delay={40} />
         </div>
         <Reveal delay={48} dur={30}>
