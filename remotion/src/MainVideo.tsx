@@ -3,7 +3,7 @@ import { TransitionSeries, linearTiming, springTiming } from "@remotion/transiti
 import { fade } from "@remotion/transitions/fade";
 import { wipe } from "@remotion/transitions/wipe";
 import { Montage } from "./scenes/Montage";
-import { Shot } from "./scenes/Shot";
+
 import { IntroCard, OfferCard, CtaCard } from "./scenes/Card";
 import { Frame } from "./components/Bits";
 import { FOREST_DEEP } from "./theme";
@@ -40,12 +40,12 @@ export const MainVideo: React.FC = () => (
       />
 
       <TransitionSeries.Sequence durationInFrames={D.living}>
-        <Shot
-          src="reel-living.jpg"
+        <Montage
           eyebrow="Living"
           title="Rooms made"
           italic="to linger in."
-          caption="Deep green velvet, brass warmth and quiet built-in storage."
+          caption="Alcove joinery, media walls and libraries — sage, navy or warm neutral."
+          shots={["living-sage.jpg", "living-navy.jpg", "living-lounge-1.jpg"]}
           duration={D.living}
         />
       </TransitionSeries.Sequence>
@@ -55,12 +55,12 @@ export const MainVideo: React.FC = () => (
       />
 
       <TransitionSeries.Sequence durationInFrames={D.bedroom}>
-        <Shot
-          src="reel-bedroom.jpg"
+        <Montage
           eyebrow="Bedrooms"
-          title="Calm, considered,"
+          title="Fitted wardrobes,"
           italic="made to measure."
-          caption="Soft linen tones, brass detail and fitted wardrobes built for the room."
+          caption="Walnut, gloss white or hand-painted — built to the exact geometry of your room."
+          shots={["bedroom-walnut.jpg", "bedroom-blue.jpg", "bedroom-white.jpg"]}
           duration={D.bedroom}
           align="flex-end"
         />
