@@ -3,7 +3,7 @@ import { TransitionSeries, linearTiming, springTiming } from "@remotion/transiti
 import { fade } from "@remotion/transitions/fade";
 import { wipe } from "@remotion/transitions/wipe";
 import { Montage } from "./scenes/Montage";
-import { Shot } from "./scenes/Shot";
+
 import { IntroCard, OfferCard, CtaCard } from "./scenes/Card";
 import { Frame } from "./components/Bits";
 import { FOREST_DEEP } from "./theme";
