@@ -80,9 +80,9 @@ export const IntroCard: React.FC = () => (
           letterSpacing: 1,
         }}
       >
-        A NEW ADDRESS
+        A new address,
         <br />
-        <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>in London</span>
+        <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>same craftsmanship.</span>
       </div>
     </Reveal>
     <div style={{ height: 56 }} />
@@ -110,7 +110,7 @@ export const OfferCard: React.FC = () => {
             fontFeatureSettings: '"lnum" 1',
           }}
         >
-          10%
+          50%
         </div>
         <div
           style={{
