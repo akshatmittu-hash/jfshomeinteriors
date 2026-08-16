@@ -8,7 +8,7 @@ import { IntroCard, OfferCard, CtaCard } from "./scenes/Card";
 import { Frame } from "./components/Bits";
 import { FOREST_DEEP } from "./theme";
 
-const D = { intro: 140, kitchen: 165, living: 150, bedroom: 150, offer: 160, cta: 180 };
+const D = { intro: 165, kitchen: 195, living: 175, bedroom: 175, offer: 170, cta: 190 };
 const T = 22;
 export const TOTAL =
   D.intro + D.kitchen + D.living + D.bedroom + D.offer + D.cta - T * 5;
