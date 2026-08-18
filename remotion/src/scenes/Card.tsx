@@ -138,8 +138,7 @@ export const OfferCard: React.FC = () => {
             maxWidth: 720,
           }}
         >
-          For every customer who visits
-          <br /> after watching this reel.
+          For every customer who visits.
         </div>
       </Reveal>
     </CardShell>
