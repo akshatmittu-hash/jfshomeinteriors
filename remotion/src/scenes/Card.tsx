@@ -163,7 +163,11 @@ export const CtaCard: React.FC = () => (
       <Eyebrow delay={2}>Visit us</Eyebrow>
     </div>
     <div style={{ height: 46 }} />
-    <Reveal delay={10} dur={34} distance={50}>
+    <Reveal delay={8} dur={30}>
+      <Mark width={900} />
+    </Reveal>
+    <div style={{ height: 70 }} />
+    <Reveal delay={24} dur={34} distance={50}>
       <div style={{ fontFamily: display, color: CREAM, fontSize: 78, lineHeight: 1.25, fontFeatureSettings: '"lnum" 1' }}>
         67 Cove Road,
         <br />
@@ -173,13 +177,9 @@ export const CtaCard: React.FC = () => (
       </div>
     </Reveal>
     <div style={{ height: 56 }} />
-    <Rule width={260} delay={44} />
+    <Rule width={260} delay={48} />
     <div style={{ height: 66 }} />
-    <Reveal delay={52} dur={30}>
-      <Mark width={900} />
-    </Reveal>
-    <div style={{ height: 70 }} />
-    <Reveal delay={68} dur={28}>
+    <Reveal delay={62} dur={28}>
       <div
         style={{
           fontFamily: body,
