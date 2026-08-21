@@ -28,8 +28,8 @@ export const MainVideo: React.FC = () => (
         <Montage
           eyebrow="Kitchens"
           title="Hand-finished"
-          italic="designer kitchens."
-          caption="Shaker to handleless — premium surfaces, considered hardware."
+          italic="designer kitchens"
+          caption="Shaker to handleless, in a wide range of colours and materials."
           shots={["kitchen-sage.jpg", "kitchen-navy.jpg", "kitchen-cream.jpg"]}
           duration={D.kitchen}
         />
@@ -43,8 +43,8 @@ export const MainVideo: React.FC = () => (
         <Montage
           eyebrow="Living"
           title="Rooms made"
-          italic="to linger in."
-          caption="Alcove joinery, media walls and libraries — sage, navy or warm neutral."
+          italic="to linger in"
+          caption="Alcove joinery, media walls and libraries in a wide range of colours and finishes."
           shots={["living-sage.jpg", "living-navy.jpg", "living-lounge-1.jpg"]}
           duration={D.living}
         />
@@ -58,8 +58,8 @@ export const MainVideo: React.FC = () => (
         <Montage
           eyebrow="Bedrooms"
           title="Fitted wardrobes,"
-          italic="made to measure."
-          caption="Walnut, gloss white or hand-painted — built to the exact geometry of your room."
+          italic="made to measure"
+          caption="Made-to-measure storage solutions, built to the exact geometry of your room."
           shots={["bedroom-walnut.jpg", "bedroom-blue.jpg", "bedroom-white.jpg"]}
           duration={D.bedroom}
           align="flex-end"
