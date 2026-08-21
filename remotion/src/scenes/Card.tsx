@@ -68,21 +68,21 @@ export const CardShell: React.FC<{ children: React.ReactNode }> = ({ children })
 
 export const IntroCard: React.FC = () => (
   <CardShell>
-    <Mark width={720} delay={4} />
+    <Mark width={900} delay={4} />
     <div style={{ height: 90 }} />
     <Reveal delay={26} dur={38} distance={54}>
       <div
         style={{
           fontFamily: display,
           color: CREAM,
-          fontSize: 116,
+          fontSize: 124,
           lineHeight: 1.06,
           letterSpacing: 1,
         }}
       >
-        A new address,
+        Inspired by you,
         <br />
-        <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>same craftsmanship.</span>
+        <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>designed by craftsmanship</span>
       </div>
     </Reveal>
     <div style={{ height: 56 }} />
@@ -96,10 +96,21 @@ export const OfferCard: React.FC = () => {
   return (
     <CardShell>
       <div style={{ fontFamily: body }}>
-        <Eyebrow delay={2}>Opening week only</Eyebrow>
+        <Eyebrow delay={2}>New showroom grand opening</Eyebrow>
       </div>
       <div style={{ height: 50 }} />
       <Reveal delay={12} dur={36} distance={56}>
+        <div
+          style={{
+            fontFamily: display,
+            color: CREAM,
+            fontSize: 64,
+            letterSpacing: 8,
+            marginBottom: 10,
+          }}
+        >
+          UP TO
+        </div>
         <div
           style={{
             fontFamily: display,
@@ -123,6 +134,7 @@ export const OfferCard: React.FC = () => {
         >
           OFF
         </div>
+
       </Reveal>
       <div style={{ height: 54 }} />
       <Rule width={220} delay={48} />
@@ -138,7 +150,7 @@ export const OfferCard: React.FC = () => {
             maxWidth: 720,
           }}
         >
-          For every customer who visits.
+          Celebrate our new opening with exclusive, limited-time deals.
         </div>
       </Reveal>
     </CardShell>
@@ -153,10 +165,10 @@ export const CtaCard: React.FC = () => (
     <div style={{ height: 46 }} />
     <Reveal delay={10} dur={34} distance={50}>
       <div style={{ fontFamily: display, color: CREAM, fontSize: 78, lineHeight: 1.25, fontFeatureSettings: '"lnum" 1' }}>
-        67 Cove Road
+        67 Cove Road,
         <br />
         <span style={{ fontStyle: "italic", color: GOLD, fontWeight: 300 }}>
-          Farnborough GU14 0EX
+          Farnborough, GU14 0EX
         </span>
       </div>
     </Reveal>
@@ -164,7 +176,7 @@ export const CtaCard: React.FC = () => (
     <Rule width={260} delay={44} />
     <div style={{ height: 66 }} />
     <Reveal delay={52} dur={30}>
-      <Mark width={680} />
+      <Mark width={900} />
     </Reveal>
     <div style={{ height: 70 }} />
     <Reveal delay={68} dur={28}>
