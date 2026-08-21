@@ -103,14 +103,25 @@ export const OfferCard: React.FC = () => {
         <div
           style={{
             fontFamily: display,
+            color: CREAM,
+            fontSize: 64,
+            letterSpacing: 8,
+            marginBottom: 10,
+          }}
+        >
+          UP TO
+        </div>
+        <div
+          style={{
+            fontFamily: display,
             color: GOLD,
-            fontSize: 220,
+            fontSize: 300,
             lineHeight: 0.9,
             transform: `scale(${pulse})`,
             fontFeatureSettings: '"lnum" 1',
           }}
         >
-          Up to 50%
+          50%
         </div>
         <div
           style={{
@@ -123,6 +134,7 @@ export const OfferCard: React.FC = () => {
         >
           OFF
         </div>
+
       </Reveal>
       <div style={{ height: 54 }} />
       <Rule width={220} delay={48} />
